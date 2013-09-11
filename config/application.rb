@@ -1,11 +1,9 @@
 require "rulers"
 
+$LOAD_PATH << File.join(File.dirname(__FILE__), "..", "app", "controllers")
+require "quotes_controller"
+
 module BestQuotes
   class Application < Rulers::Application
-    alias :super_call :call
-    
-    def call(env)
-      super_call(env)
-    end
   end
 end
