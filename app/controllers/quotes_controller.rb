@@ -24,4 +24,13 @@ class QuotesController < Rulers::Controller
     model = FileModel.create attrs
     render :quote, :obj => model
   end
+  
+  def create
+    # puts request.inspect
+    quote = FileModel.find(request.params["id"])
+    quote["quote"]= request.params["quote"]
+    quote.save
+    
+    render :quote, :obj => quote
+  end
 end
