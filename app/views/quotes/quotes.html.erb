@@ -1,0 +1,11 @@
+<%# app/views/quotes/quotes.html.erb %>
+
+<% obj.each do |quote| %>
+  <div>
+    <p>
+      &quot;<%= quote["quote"] %>&quot;<br/>
+      &ndash;<%= quote["attribution"] %>
+    </p>
+    <i>(Submitted by <%= quote["submitter"] %>)
+  </div>
+<% end %>
