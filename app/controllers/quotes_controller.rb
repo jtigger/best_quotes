@@ -14,6 +14,11 @@ class QuotesController < Rulers::Controller
     end
   end
   
+  def show
+    quote = FileModel.find(request.params["id"])
+    render :quote, :obj => quote
+  end
+  
   def quotes
     quotes = FileModel.find_all
     render :quotes, :obj => quotes
@@ -37,4 +42,5 @@ class QuotesController < Rulers::Controller
     
     render :quote, :obj => quote
   end
+  
 end
