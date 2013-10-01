@@ -15,8 +15,8 @@ class QuotesController < Rulers::Controller
   end
   
   def show
-    quote = FileModel.find(params["id"])
-    render_response :quote, {:obj => quote, :user_agent => request.user_agent}
+    @obj = FileModel.find(params["id"])
+    render_response :quote, {:user_agent => request.user_agent}
   end
   
   def quotes
