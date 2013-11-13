@@ -19,7 +19,7 @@ class QuotesController < Rulers::Controller
     render_response :quote, {:user_agent => request.user_agent}
   end
   
-  def quotes
+  def index
     quotes = FileModel.find_all
     render :quotes, :obj => quotes
   end

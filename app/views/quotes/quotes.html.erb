@@ -2,7 +2,7 @@
 
 <% obj.each do |quote| %>
   <div>
-    <p>
+    <p>[<a href="/quote/show/id=<%= quote["id"] %>"><%= quote["id"] %></a>]
       &quot;<%= quote["quote"] %>&quot;<br/>
       &ndash;<%= quote["attribution"] %>
     </p>
