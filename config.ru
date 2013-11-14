@@ -6,7 +6,7 @@ app = BestQuotes::Application.new
 use Rack::ContentType
 
 app.route do
-  match "", "quotes#index"
+  root proc { [200, {}, ["Root"] ] }
   match "sub-app", proc { [200, {}, ["Hello, sub-app!"]] }
   
   match ":controller/:id/:action"
